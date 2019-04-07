@@ -56,7 +56,7 @@ class App extends React.Component {
                     type="submit"
                     disabled={submitDisabled}
                   >
-                    Add items
+                    Add item
                   </button>
                 </form>
               </th>
