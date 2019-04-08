@@ -7,7 +7,7 @@ script:
   - docker run image_id/docker-react npm run test -- --coverage
 deploy:
   provider: script
-  script: bash scripts/deploy.js
+  script: bash scripts/deploy.sh
   on:
     branch: master
 env:
