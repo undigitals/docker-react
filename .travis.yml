@@ -7,3 +7,12 @@ before_install:
 
 script:
   - docker run image_id/docker-react npm run test -- --coverage
+
+deploy:
+  provider: script
+  script: bash scripts/deploy.js
+  on:
+    branch: develop
+  access_key_id: $PUBLIC_KEY
+  secret_access_key:
+    secure: $PRIVATE_KEY
