@@ -16,6 +16,7 @@
     "ssh2": "^0.8.2"
   },
   "scripts": {
+    "postinstall": "webpack",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
