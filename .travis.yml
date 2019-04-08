@@ -13,6 +13,6 @@ deploy:
   script: bash scripts/deploy.js
   on:
     branch: develop
-  access_key_id: $PUBLIC_KEY
+  access_key_id: PUBLIC_KEY
   secret_access_key:
-    secure: $PRIVATE_KEY
+    secure: PRIVATE_KEY
