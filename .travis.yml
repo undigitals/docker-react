@@ -6,10 +6,17 @@ before_install:
 script:
   - docker run image_id/docker-react npm run test -- --coverage
 deploy:
-  provider: script
-  script: bash scripts/deploy.js
+  provider: heroku
+  api_key:
+    secure: c35707e1-9a20-4d50-baa1-af39b2966c4c
+  app: docker-react-app
   on:
     branch: master
-env:
-  global:
-    secure: d1JkRi9GpMrlGVG9ORThDwTM9ASfz4Yf66d7K70kjYzATW+fZC9PMI71k3x3EC4sZUcaCEnr9x4WrzrYK7kIztiiAR9pd8261tfv2cyFaDjBowRIkf9R9B1/B5nAhXQwtXoY7tBMllN4QALO2N0GmOleWow8Fmiw1pTH+3gZTzzIZ7YsNWoT2JRAwTkQE3D2ATOk63lWAWfjF8iNs8KCQDbg9ghfzJa+o5GLJ6nvE4R9/AE6SW51URC/8U7f5gCX6gnd6XcBLMkyP1Gui9YjPUPbyI0UznloSM+ccZ8QEDN+QfPMwyrKhmlt3Lw9THP5NYyO9aukS+rX/bKMHCIa0nYgD/9gSngBhHW707SBKRcOFcIxKBm1bACxMAAAZmU7SC9jPh+AA5ILYkJgrlHSoGBbip+Xufpx4j2guTnlW/TNUr+tPY6f5Y1wcssRRjK7LuApa+fXz7VXra3iGddPf2ZrOd7Tk6H9vim+20w/ukCZRD2uAUKZNT4IFp1/ktNWI33cPIzVTMgNUQhbYgsj9i10YFnmNIyVJthv6/9cQ8VShDOl6+cqMcUeO4pCaWmYP2vEQpsezmiuVjzrJKBsLjEwzDIYZGlqUvApNCKB3CD2OuAXMurQRpKaWdHbBHukCi0Sgg9q93VnIR8dAPoW5Vq6lznkBr7sz3jeeypxH2k=
+# deploy:
+#   provider: script
+#   script: bash scripts/deploy.sh
+#   on:
+#     branch: master
+# env:
+#   global:
+#     secure: d1JkRi9GpMrlGVG9ORThDwTM9ASfz4Yf66d7K70kjYzATW+fZC9PMI71k3x3EC4sZUcaCEnr9x4WrzrYK7kIztiiAR9pd8261tfv2cyFaDjBowRIkf9R9B1/B5nAhXQwtXoY7tBMllN4QALO2N0GmOleWow8Fmiw1pTH+3gZTzzIZ7YsNWoT2JRAwTkQE3D2ATOk63lWAWfjF8iNs8KCQDbg9ghfzJa+o5GLJ6nvE4R9/AE6SW51URC/8U7f5gCX6gnd6XcBLMkyP1Gui9YjPUPbyI0UznloSM+ccZ8QEDN+QfPMwyrKhmlt3Lw9THP5NYyO9aukS+rX/bKMHCIa0nYgD/9gSngBhHW707SBKRcOFcIxKBm1bACxMAAAZmU7SC9jPh+AA5ILYkJgrlHSoGBbip+Xufpx4j2guTnlW/TNUr+tPY6f5Y1wcssRRjK7LuApa+fXz7VXra3iGddPf2ZrOd7Tk6H9vim+20w/ukCZRD2uAUKZNT4IFp1/ktNWI33cPIzVTMgNUQhbYgsj9i10YFnmNIyVJthv6/9cQ8VShDOl6+cqMcUeO4pCaWmYP2vEQpsezmiuVjzrJKBsLjEwzDIYZGlqUvApNCKB3CD2OuAXMurQRpKaWdHbBHukCi0Sgg9q93VnIR8dAPoW5Vq6lznkBr7sz3jeeypxH2k=
